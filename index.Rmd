@@ -194,13 +194,13 @@ class: middle, center
 
 <br>
 
-+ **Coalition maintenance strategy**
++ **Coalition maintenance strategy** (*"mobilizing"*)
 
-    + Reach out to people who are past and present supporters to strengthen coalition
+    + Reach out to people who are past and present supporters to strengthen coalition 
 
-+  **Coalition expansion strategy**
++  **Coalition expansion strategy** (*"chasing"*)
 
-    + Target people who are potential voters or yet undecided to expand coalition
+    + Target people who are potential voters or yet undecided to expand coalition 
 
 
 ---
