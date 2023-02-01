@@ -1,8 +1,8 @@
 ---
-title: "Who (Doesn't) Target You and Why?"
-subtitle: "Studying Microtargeting with the new Meta Ad Targeting Dataset"
-author: "Fabio Votta"
-date: "`r Sys.Date()`"
+title: "Who (Doesn't) Target You?"
+subtitle: "An Exploration of Online Political Microtargeting Across the World"
+author: "<b>Fabio Votta</b>, Simon Kruschinski <i>(University of Mainz)</i>, Mads Hove<i> (University of Southern Denmark)</i>, Tom Dobber, Natali Helberger, and Claes de Vreese <i>(University of Amsterdam)</i>"
+date: "With support from Anamaria Dutceac Segesten <i>(University of Lund)</i> and Linn Sandberg <i>(University of Bergen)</i><br><br>3rd February 2023 - Etmaal 2023"
 output:
   xaringan::moon_reader:
     css: [ascor.css, default]
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(fig.retina = 3,
 
 library(tidyverse)
 
-source("../algo_ads/helpers.R")
+source("../../algo_ads/helpers.R")
 
 # dir("../img", recursive = T, full.names = T) %>%
 #   walk(~{file.copy(.x, str_remove(.x, "\\.\\.\\/"))})
@@ -44,15 +44,415 @@ source("../algo_ads/helpers.R")
 
 ---
 
-### Data on Ad Targeting
+### Studying online political microtargeting before 2022
 
-+ Past: Data on Ad Targeting is hard to come by
+
++ Poor data access
+
+  + Meta Ad Library Data has many shortcomings (Leerssen et al. 2021)
+  
+      + no actual targeting criteria
+  
+  + Google only provides data on few (official) political actors
+  
+--
+
++ Alternatives (?)
+
+  + Use "Why am I seeing this?" labels
      
-     + only accessible via data donations ("Why am I seeing this?")
+  + only accessible via data donations 
      
-     + scarce coverage and biased data (only from those who volunteer their data)
+      + scarce coverage and biased data
+     
+  + Risk of getting banned by platforms (NYU case 2021)
+
+        
+---
+
+### Data on Ad Targeting in 2023
+
++ September 2022 Meta gives *vetted researchers* access to an "ad targeting dataset"
+
+    + Includes **actual** targeting criteria used in Social Issue, Electoral, and Political (SIEP) ads on the **ad-level**
+    
+    + Coverage
+    
+        + All countries in which political ads run
+        
+        + August 3rd, 2020 - today (monthly updates)
+        
+        + Limited to using data on the Meta internal FORT platform
+  
+--
+
+**Targeting of audiences by:**
+
++ Age, Gender, and Language
+
+**Targeting and Exclusion (!) of audiences by:**
+
++ Location, "Interests", Custom and Lookalike audiences (and more)
+
+
+---
+
+class: middle, center
+
+### For the first time we can investigate the usage of online political microtargeting at scale and worldwide using a very comprehensive (but probably not 100% complete) data source
+
+---
+
+
+class: middle, center
+
+## Aims of this Research
+
+**Descriptive Data Analysis of Political Microtargeting**
+
+**Worldwide Context (not just US, UK and some Europe)**
+
+---
+
+## Research Questions
+
++ RQ1: Assessing the Scale
+
+  + How big is the phenomenon of online political microtargeting?
+
+<!-- How much money do political parties spend on targeted ads vs. ads that are targeted towards entire country?  -->
+
+<!-- Split up by country, party type and family/ideology. -->
+
++ RQ2: Who (Doesn't) Target You?
+
+  + Who are political parties including and excluding when they target their advertisements on Meta?
+
+
+<!-- 1.	who are the most targeted audiences -->
+<!-- 2.	who are the most excluded audiences -->
+<!-- 3.	how this differs by country/party type and family/ideology -->
+
+
+---
+
+class: white
+
+## Sample Description
+
+.leftcol30[
+
++ All **national** elections between *August 2020 and December 2022*
+
++ Time-frame: 3 months before election day
+
+
++ Final target sample: 
+  + **85 countries** 
+  + **105 elections** 
+  + 16 countries placed no ads on Meta and are excluded
+
++ Only focus on **political parties and candidates**
+]
+
+<!-- **122 *national* elections** in **101 countries** between -->
+
+.rightcol70[
+![](img/worldmap_coverage2.png)
+
+]
+
+
+---
+
+class: white
+
+## Sample TODAY
+
+.leftcol30[
+
+
+First results based on: 
+  
++ **23 countries** 
+
++ **26 elections** 
+
++ **279** hand-coded **political parties**
+  + looking at 100 top advertisers in each country which on average covers 91.36% of ad spend
+
++ placing **296k ads** 
+
++ combined (minimum) ad spend: **$47 Million**
+
+(data annotated & enhanced using the the *Partyfacts database*, see Döring & Regel 2019)
+
+]
+
+
+.rightcol70[
+![](img/worldmap_coverage3.png)
+
+]
+
+
+---
+
+class: white
+
+#### RQ1 How big is the phenomena of Political Microtargeting?
+
+.leftcol30[
+
+**At least one targeting criterion:**
+
+In total, **90.73%** of budget **is spend on ads with at least one targeting criterion**
+
+That's a total of **$42 Million Dollar** (minimum estimate)
+
+]
+
+.rightcol70[
+![](img/spend_on_targeting_one.png)
+
+]
+
+---
+
+class: white
+
+#### RQ1 How big is the phenomena of Political Microtargeting?
+
+.leftcol30[
+
+
+**Three or more targeting criteria:**
+
+In total, **22.90%** of budget **is spend on ads with at least three targeting criteria**
+
+That's a total of **$11 Million Dollar** (minimum estimate)
+
+]
+
+.rightcol70[
+![](img/spend_on_targeting_three.png)
+
+]
+
+---
+
+class: white
+
+#### RQ1 How big is the phenomena of Political Microtargeting? - EXCLUSION
+
+.leftcol30[
+
+**At least one excluding criterion:**
+
+In total, **32.05%** of budget **is spend on ads with at least one excluding criterion**
+
+That's a total of **$15 Million Dollar** (minimum estimate)
+
+]
+
+.rightcol70[
+![](img/spend_on_Excluding_one.png)
+
+]
+
+---
+
+class: white
+
+#### RQ1 How big is the phenomena of Political Microtargeting? - EXCLUSION
+
+.leftcol30[
+
+
+**TWO or more excluding criteria:**
+
+In total, **14.05%** of budget **is spend on ads with at least two excluding criteria**
+
+That's a total of **$6.4 Million Dollar** (minimum estimate)
+
+]
+
+.rightcol70[
+![](img/spend_on_Excluding_three.png)
+
+]
+
+
+---
+
+class: white
+
+#### RQ2: Who are political parties including and excluding on Meta?
+
+.pull-left[
+![](img/spend_per_targeting_overall.png)
+]
 
 --
+
+.pull-right[
+![](img/spend_per_exclusion_overall.png)
+]
+
+---
+
+class: white
+
+#### RQ2: Who are political parties including and excluding on Meta?
+
+![](img/spend_per_age.png)
+
+---
+
+
+## Conclusion
+
++ Online Political Microtargeting is common around the world
+
+
++ Future studies on microtargeting should consider broadening their research horizon beyond US, UK, and Europe
+
++ The Ad Targeting Dataset released by is a step in the right direction
+
+  + however, the dataset is not easily accessible by civil society
+  
+  
++ Political parties seem to often target their own supporter base
+
+  + to be investigated further!
+
+---
+
+class: middle, center
+
+## Thank you for listening
+
+Here, have a wall of cats in space riding burritos:
+
+
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+
+---
+
+class: middle, center
+
+## APPENDIX
+
+
+
+---
+
+#### RQ1 How big is the phenomena of Political Microtargeting?
+
+    
+### First Issue: Meta Ad Targeting Dataset is Messy
+
+*How do we identify political actors advertising on Meta?*
+
+1. Hand-labeled data: Netherlands, Denmark, and Germany
+
+2. Self-identified labels as "political" party/candidate etc.
+
+    - scrape this from the Facebook Ad Library (have done this for 180k+ advertisers)
+    
+![](img/tags.png)
+
+
+---
+
+### Netherlands
+
+![](img/NL)
+
+---
+
+### Germany
+
+![](img/DE)
+
+---
+
+### Denmark
+
+![](img/DK)
+
+---
+
+
+### Second Issue: Which party do advertisers belong to?
+
+1. Matching using party names and abbreviations -> can be messy!
+    + this may include also searching for content of ads
+
+2. (Automated) Wikipedia search (especially for candidates)
+
+3. Let ChatGPT do it? ;')
+
+
+
+---
+
+## Validation of Automated Matching
+
+1. Make sure we are not missing any influential spenders
+    + Retrieve 50 Top Spenders for each election
+    + Retrieve 50 Top Spenders who were automatically not matched
+    + hand-label them
+
+2. From the rest, draw a random sample of 100 matched and non-matched advertisers
+    + hand-label them
+    + make sure we also have smaller advertisers cause they count as well
+    
+20 Elections X 200 Hand-labelling = 4000 coding task
+    
+    
+---
+
+## Questions
+
+Does anyone have ideas about how to
+
+1. maximize coverage (more countries)
+2. keep data quality high (other validation methods)
+
+One other idea: classify with machine learning model that is out there? I know Google can identify names and logos from images.. but can it also identify political party from names?
+
+---
+
+## Conclusion
+
+End the paper with a research agenda: what should we research in the future? 
+
+
+
+**Thanks for listening!**
+
+
+![](https://media3.giphy.com/media/0WHHnRNffwKTo4BvTb/giphy.gif)
+
+
+---
+
+class: middle, center
+
+## Some Rest
+
+
+---
 
 <br>
 
@@ -86,62 +486,7 @@ source("../algo_ads/helpers.R")
         
 ![](img/targeting2.png)
 
-
-        
 ---
-
-### Data on Ad Targeting
-
-+ September 2022: FORT applications open to everyone
-    
-    + Ad targeting data now includes:
-    
-        + All countries in which political ads run
-        
-        + Coverage: August 3rd, 2020 - today (monthly updates)
-        
-        + No possibility to download data (as before)
-
-
-    
-
----
-
-### FORT data structure
-
-The following is available to us now:
-
-Targeting and Exclusion (!) of Audiences by
-
-+ Age
-
-+ Gender
-
-+ Location
-
-+ (Friend) Connections
-
-+ "Interests" and "Behaviour"
-
-+ Custom and Lookalike audiences (however, no more details than that)
-
----
-
-class: middle, center
-
-### For the first time we can investigate the usage of online political microtargeting at scale and worldwide using a very comprehensive (but probably not 100% complete) data source
-
----
-
-
-class: middle, center
-
-### Tentative research question:
-
-# Who are political parties including and excluding when they target their advertisements?
-
----
-
 
 ### Previous studies suggest advertisers on Meta primarily target own supporters
 
