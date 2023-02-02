@@ -44,37 +44,21 @@ library(tidyverse)
 
 ---
 
-### Studying online political microtargeting before 2022
+### Studying usage of online political microtargeting 
 
 
-+ Poor data access
++ Poor data access (Leerssen et al. 2021)
 
-  + Meta Ad Library Data has many shortcomings (Leerssen et al. 2021)
++ Risk of getting banned by platforms (NYU case 2021)
   
-      + no actual targeting criteria
-  
-  + Google only provides data on few (official) political actors
-  
+
 --
 
-+ Alternatives (?)
+**Meta Ad Targeting Dataset**
 
-  + Use "Why am I seeing this?" labels
-     
-  + only accessible via data donations 
-     
-      + scarce coverage and biased data
-     
-  + Risk of getting banned by platforms (NYU case 2021)
++ September 2022 Meta gave *vetted researchers* access to an "ad targeting dataset"
 
-        
----
-
-### Data on Ad Targeting in 2023
-
-+ September 2022 Meta gives *vetted researchers* access to an "ad targeting dataset"
-
-    + Includes **actual** targeting criteria used in Social Issue, Electoral, and Political (SIEP) ads on the **ad-level**
+    + Includes **actual** targeting criteria of political ads on the **ad-level**
     
     + Coverage
     
@@ -84,8 +68,6 @@ library(tidyverse)
         
         + Limited to using data on the Meta internal FORT platform
   
---
-
 **Targeting of audiences by:**
 
 + Age, Gender, and Language
@@ -93,8 +75,7 @@ library(tidyverse)
 **Targeting and Exclusion (!) of audiences by:**
 
 + Location, "Interests", Custom and Lookalike audiences (and more)
-
-
+        
 ---
 
 class: middle, center
@@ -161,7 +142,6 @@ class: white
 ![](img/worldmap_coverage2.png)
 
 ]
-
 
 ---
 
@@ -319,7 +299,9 @@ class: white
 
 + The Ad Targeting Dataset released by is a step in the right direction
 
-  + however, the dataset is not easily accessible by civil society
+  + however, increases dependency on Meta providing access
+
+  + dataset is not easily accessible by resaearchers, and not at all by civil society
   
   
 + Political parties seem to often target their own supporter base
