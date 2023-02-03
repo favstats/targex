@@ -2,7 +2,7 @@
 title: "Who (Doesn't) Target You?"
 subtitle: "An Exploration of Online Political Microtargeting Across the World"
 author: "<b>Fabio Votta</b>, Simon Kruschinski <i>(University of Mainz)</i>, Mads Hove<i> (University of Southern Denmark)</i>, Tom Dobber, Natali Helberger, and Claes de Vreese <i>(University of Amsterdam)</i>"
-date: "With support from Anamaria Dutceac Segesten <i>(University of Lund)</i> and Linn Sandberg <i>(University of Bergen)</i><br><br>3rd February 2023 - Etmaal 2023"
+date: 'With support from Anamaria Dutceac Segesten <i>(University of Lund)</i> and Linn Sandberg <i>(University of Bergen)</i><br><br>`r icons::icon_style(icons::fontawesome("link"),fill="lightgrey")`&nbsp;favstats.github.io/targex (Slides) <br> `r icons::icon_style(icons::fontawesome("twitter"),fill="blue")`&nbsp;@favstats <br> `r icons::icon_style(icons::fontawesome("mastodon"),fill="#615ff7")`&nbsp;@favstats@fosstodon.org &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3rd February 2023 - Etmaal 2023 '
 output:
   xaringan::moon_reader:
     css: [ascor.css, default]
@@ -44,8 +44,7 @@ library(tidyverse)
 
 ---
 
-### Studying usage of online political microtargeting 
-
+### Studying usage of *online political microtargeting* 
 
 + Poor data access (Leerssen et al. 2021)
 
@@ -68,13 +67,15 @@ library(tidyverse)
         
         + Limited to using data on the Meta internal FORT platform
   
+--
+  
 **Targeting of audiences by:**
 
 + Age, Gender, and Language
 
 **Targeting and Exclusion (!) of audiences by:**
 
-+ Location, "Interests", Custom and Lookalike audiences (and more)
++ Location, "Detailed" Targeting ("Interests"), Custom and Lookalike audiences (and more)
         
 ---
 
@@ -91,7 +92,7 @@ class: middle, center
 
 **Descriptive Data Analysis of Political Microtargeting**
 
-**Worldwide Context (not just US, UK and some Europe)**
+**Worldwide Context (not just US, UK and Europe)**
 
 ---
 
@@ -154,16 +155,16 @@ class: white
 
 First results based on: 
   
-+ **23 countries** 
++ **27 countries** 
 
-+ **26 elections** 
++ **30 elections** 
 
-+ **279** hand-coded **political parties**
++ **309** hand-coded **political parties**
   + looking at 100 top advertisers in each country which on average covers 91.36% of ad spend
 
-+ placing **296k ads** 
++ placing **871k ads** 
 
-+ combined (minimum) ad spend: **$47 Million**
++ combined (minimum) ad spend: **$241 Million**
 
 (data annotated & enhanced using the the *Partyfacts database*, see Döring & Regel 2019)
 
@@ -180,15 +181,15 @@ First results based on:
 
 class: white
 
-#### RQ1 How big is the phenomena of Political Microtargeting?
+#### RQ1: How big is the phenomena of Political Microtargeting?
 
 .leftcol30[
 
 **At least one targeting criterion:**
 
-In total, **90.73%** of budget **is spend on ads with at least one targeting criterion**
+In total, **92.69%** of budget **is spend on ads with at least one targeting criterion**
 
-That's a total of **$42 Million Dollar** (minimum estimate)
+That's a total of **$223 Million Dollar** (minimum estimate)
 
 ]
 
@@ -201,16 +202,16 @@ That's a total of **$42 Million Dollar** (minimum estimate)
 
 class: white
 
-#### RQ1 How big is the phenomena of Political Microtargeting?
+#### RQ1: How big is the phenomena of Political Microtargeting?
 
 .leftcol30[
 
 
 **Three or more targeting criteria:**
 
-In total, **22.90%** of budget **is spend on ads with at least three targeting criteria**
+In total, **35.58%** of budget **is spend on ads with at least three targeting criteria**
 
-That's a total of **$11 Million Dollar** (minimum estimate)
+That's a total of **$86 Million Dollar** (minimum estimate)
 
 ]
 
@@ -223,15 +224,15 @@ That's a total of **$11 Million Dollar** (minimum estimate)
 
 class: white
 
-#### RQ1 How big is the phenomena of Political Microtargeting? - EXCLUSION
+#### RQ1: How big is the phenomena of Political Microtargeting? - *EXCLUSION*
 
 .leftcol30[
 
 **At least one excluding criterion:**
 
-In total, **32.05%** of budget **is spend on ads with at least one excluding criterion**
+In total, **65.70%** of budget **is spend on ads with at least one excluding criterion**
 
-That's a total of **$15 Million Dollar** (minimum estimate)
+That's a total of **$158 Million Dollar** (minimum estimate)
 
 ]
 
@@ -244,16 +245,16 @@ That's a total of **$15 Million Dollar** (minimum estimate)
 
 class: white
 
-#### RQ1 How big is the phenomena of Political Microtargeting? - EXCLUSION
+#### RQ1 How big is the phenomena of Political Microtargeting? - *EXCLUSION*
 
 .leftcol30[
 
 
-**TWO or more excluding criteria:**
+**Three or more excluding criteria:**
 
-In total, **14.05%** of budget **is spend on ads with at least two excluding criteria**
+In total, **12.06%** of budget **is spend on ads with at least three excluding criteria**
 
-That's a total of **$6.4 Million Dollar** (minimum estimate)
+That's a total of **$29 Million Dollar** (minimum estimate)
 
 ]
 
@@ -263,11 +264,42 @@ That's a total of **$6.4 Million Dollar** (minimum estimate)
 ]
 
 
+
+
+
 ---
 
 class: white
 
-#### RQ2: Who are political parties including and excluding on Meta?
+### European Parliament takes Stance on Political Advertising Regulation
+
+.pull-left[
+
++ Draft legislation on the transparency and targeting of political advertising
+
++ Article 12, §1c:
+
+> Targeting and ad delivery techniques referred to in this paragraph shall **not combine more than four categories of personal data**, including the location of the data subject.
+
+So how much ad spend in EU elections would fall under this proposal?
+
+#### 36.90% or 5.3 million Euros
+
+]
+
+.pull-right[
+
+![](img/spend_on_targeting_five.png)
+
+]
+
+
+
+---
+
+class: white 
+
+#### RQ2: Who are political parties including and excluding on Meta? (party-level)
 
 .pull-left[
 ![](img/spend_per_targeting_overall.png)
@@ -283,28 +315,30 @@ class: white
 
 class: white
 
-#### RQ2: Who are political parties including and excluding on Meta?
+#### RQ2: Who are political parties including and excluding on Meta? (party-level)
 
 ![](img/spend_per_age.png)
 
 ---
 
 
-## Conclusion
+## Conclusion (work in progress)
 
-+ Online Political Microtargeting is common around the world
++ Online political **microtargeting** is **common around the world**
 
+    + Future studies should broaden horizon beyond US, UK, and Europe
 
-+ Future studies on microtargeting should consider broadening their research horizon beyond US, UK, and Europe
+<br>
 
-+ The Ad Targeting Dataset released by Meta is a step in the right direction for ad transparency
++ The **Ad Targeting Dataset** released by Meta is a **step in the right direction** for ad transparency
 
-  + however, increases dependency on Meta, should be seen critical
+  + **however**, increases **dependency on Meta, should be seen critical**, especially given  announcement of recent Twitter API changes
 
-  + dataset is not easily accessible for researchers, and not at all by civil society
+  + dataset is **not easily accessible** for researchers, and not at all by civil society
   
+<br>
   
-+ Political parties seem to often target their own supporter base
++ **Political parties** seem to often **target their own supporter base**
 
   + to be investigated further!
 
@@ -312,11 +346,17 @@ class: white
 
 class: middle, center
 
-## Thank you for listening
-
-Here, have a wall of cats in space riding burritos:
+# Thank you for listening
 
 
+
+
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+<p align="left">`r icons::icon_style(icons::fontawesome("link"),fill="lightgrey")`&nbsp;favstats.github.io/targex (Slides) <br> `r icons::icon_style(icons::fontawesome("twitter"),fill="blue")`&nbsp;@favstats <br> `r icons::icon_style(icons::fontawesome("mastodon"),fill="#615ff7")`&nbsp;@favstats@fosstodon.org</p>
+    </div>
+</div>
+
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
@@ -327,6 +367,11 @@ Here, have a wall of cats in space riding burritos:
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
 ![](https://media2.giphy.com/media/5HSYaZTcRpYnS/200.gif?cid=6c09b952487rlq3jfie8nb5axbpwai88ms2sebn2dxpiueyu&rid=200.gif&ct=g)
+
+
+
+
+
 
 ---
 
